@@ -1,0 +1,198 @@
+import { Question, ZoneId, ZoneInfo } from '../types/game';
+
+export const ZONES: Record<ZoneId, ZoneInfo> = {
+  sekolah: {
+    id: 'sekolah',
+    name: 'Sekolah Selamat',
+    title: 'Zon 1 — Sekolah Selamat',
+    subtitle: 'Aras Mudah: Konsep Asas Kata Pemeri',
+    color: '#3B82F6',
+    themeColor: 'from-blue-500 to-indigo-600',
+    badgeName: 'Lencana Pelindung Sekolah',
+    badgeIcon: '🏫',
+    iconBg: 'bg-blue-100 text-blue-700 border-blue-300',
+    spawnPosition: [0, 1.6, -22],
+    description: 'Teroka kawasan sekolah berpagar selamat. Kenal pasti kata pemeri di hadapan Frasa Nama dan Frasa Sendi Nama.',
+  },
+  rumah: {
+    id: 'rumah',
+    name: 'Rumah Selamat',
+    title: 'Zon 2 — Rumah Selamat',
+    subtitle: 'Aras Sederhana: Keselamatan Kediaman',
+    color: '#10B981',
+    themeColor: 'from-emerald-500 to-teal-600',
+    badgeName: 'Lencana Pengawal Kediaman',
+    badgeIcon: '🏡',
+    iconBg: 'bg-emerald-100 text-emerald-700 border-emerald-300',
+    spawnPosition: [20, 1.6, 6],
+    description: 'Masuk ke kawasan kediaman selamat. Lengkapkan ayat mengenai objek keselamatan rumah seperti pemadam api dan peti kecemasan.',
+  },
+  jalan: {
+    id: 'jalan',
+    name: 'Jalan Raya Selamat',
+    title: 'Zon 3 — Jalan Raya Selamat',
+    subtitle: 'Aras Aplikasi: Peraturan & Lintasan Belang',
+    color: '#F59E0B',
+    themeColor: 'from-amber-500 to-orange-600',
+    badgeName: 'Lencana Jaguh Jalan Raya',
+    badgeIcon: '🚦',
+    iconBg: 'bg-amber-100 text-amber-700 border-amber-300',
+    spawnPosition: [2, 1.6, 20],
+    description: 'Meneroka persimpangan jalan berlampu isyarat dan lintasan belang. Pilih ayat keselamatan jalan raya yang tepat.',
+  },
+  taman: {
+    id: 'taman',
+    name: 'Taman Permainan',
+    title: 'Zon 4 — Taman Permainan',
+    subtitle: 'Cabaran Akhir: Wira Kata Pemeri',
+    color: '#EC4899',
+    themeColor: 'from-pink-500 to-rose-600',
+    badgeName: 'Lencana Wira Kata Pemeri',
+    badgeIcon: '🎠',
+    iconBg: 'bg-pink-100 text-pink-700 border-pink-300',
+    spawnPosition: [-20, 1.6, 6],
+    description: 'Selesaikan cabaran terakhir di taman permainan komuniti untuk menamatkan misi dan memperoleh sijil kejuaraan!',
+  },
+};
+
+export const QUESTIONS: Question[] = [
+  // ZON 1: SEKOLAH SELAMAT
+  {
+    id: 'q1',
+    zoneId: 'sekolah',
+    stationIndex: 1,
+    title: 'Papan Misi Sekolah 1 (Aras Mudah)',
+    questionText: 'Pilih kata pemeri yang paling tepat untuk melengkapkan ayat keselamatan ini:',
+    blankSentence: 'Guru besar yang melancarkan Kempen Keselamatan Sekolah _______ Encik Razali.',
+    options: [
+      { text: 'ialah', isCorrect: true },
+      { text: 'adalah', isCorrect: false },
+    ],
+    explanation: 'Tepat sekali! "ialah" hadir di hadapan Frasa Nama. "Encik Razali" ialah kata nama khas / frasa nama yang merujuk kepada orang.',
+    hint: 'Perhatikan perkataan selepas tempat kosong: "Encik Razali" ialah Frasa Nama (orang). Kata pemeri "ialah" khusus untuk Frasa Nama.',
+    position: [-8, 1.2, -26],
+  },
+  {
+    id: 'q2',
+    zoneId: 'sekolah',
+    stationIndex: 2,
+    title: 'Papan Misi Sekolah 2 (Peraturan Keselamatan)',
+    questionText: 'Lengkapkan ayat tentang peraturan pondok pengawal sekolah di bawah:',
+    blankSentence: 'Pemeriksaan ketat di pintu pagar sekolah _______ demi menjamin keselamatan murid-murid.',
+    options: [
+      { text: 'adalah', isCorrect: true },
+      { text: 'ialah', isCorrect: false },
+    ],
+    explanation: 'Cemerlang! "adalah" digunakan di hadapan Frasa Sendi Nama. "demi menjamin..." bermula dengan kata sendi nama "demi".',
+    hint: 'Perhatikan perkataan "demi menjamin". "Demi" ialah kata sendi nama. Oleh itu, gunakan kata pemeri "adalah".',
+    position: [8, 1.2, -30],
+  },
+
+  // ZON 2: RUMAH SELAMAT
+  {
+    id: 'q3',
+    zoneId: 'rumah',
+    stationIndex: 1,
+    title: 'Papan Misi Rumah 1 (Peti Kecemasan)',
+    questionText: 'Pilih kata pemeri yang betul bagi kelengkapan keselamatan di ruang tamu:',
+    blankSentence: 'Peti kecemasan yang diletakkan di dinding ruang tamu _______ alat rawatan awal jika berlaku kecederaan.',
+    options: [
+      { text: 'ialah', isCorrect: true },
+      { text: 'adalah', isCorrect: false },
+    ],
+    explanation: 'Hebat! "alat rawatan awal" merupakan Frasa Nama. Oleh itu, kata pemeri "ialah" perlu digunakan.',
+    hint: '"Alat rawatan awal" ialah Frasa Nama (benda/alat). Ingat, gunakan "ialah" sebelum Frasa Nama!',
+    position: [26, 1.2, 0],
+  },
+  {
+    id: 'q4',
+    zoneId: 'rumah',
+    stationIndex: 2,
+    title: 'Papan Misi Rumah 2 (Pencegahan Bahaya)',
+    questionText: 'Lengkapkan ayat mengenai keselamatan kebakaran di rumah:',
+    blankSentence: 'Tindakan memadamkan punca elektrik sebelum keluar rumah _______ sangat wajar demi mencegah kebakaran.',
+    options: [
+      { text: 'adalah', isCorrect: true },
+      { text: 'ialah', isCorrect: false },
+    ],
+    explanation: 'Tepat sekali! "sangat wajar" ialah Frasa Adjektif (sifat/keadaan). Kata pemeri "adalah" hadir di hadapan Frasa Adjektif.',
+    hint: '"Sangat wajar" menerangkan sifat atau keadaan (Frasa Adjektif). Kata pemeri "adalah" dipadankan dengan Frasa Adjektif.',
+    position: [33, 1.2, 10],
+  },
+
+  // ZON 3: JALAN RAYA SELAMAT
+  {
+    id: 'q5',
+    zoneId: 'jalan',
+    stationIndex: 1,
+    title: 'Papan Misi Jalan Raya 1 (Lintasan Belang)',
+    questionText: 'Pilih kata pemeri yang tepat bagi fungsi lintasan jalan raya:',
+    blankSentence: 'Lintasan belang berdekatan lampu isyarat itu _______ kawasan selamat untuk pejalan kaki.',
+    options: [
+      { text: 'ialah', isCorrect: true },
+      { text: 'adalah', isCorrect: false },
+    ],
+    explanation: 'Betul! "kawasan selamat untuk pejalan kaki" merupakan Frasa Nama. Gunakan kata pemeri "ialah".',
+    hint: '"Kawasan selamat" ialah Frasa Nama (tempat/frasa nama). Maka kata pemeri yang tepat ialah "ialah".',
+    position: [-6, 1.2, 26],
+  },
+  {
+    id: 'q6',
+    zoneId: 'jalan',
+    stationIndex: 2,
+    title: 'Papan Misi Jalan Raya 2 (Pilihan Ayat)',
+    questionText: 'Pilih ayat keselamatan jalan raya yang menggunakan kata pemeri dengan BETUL:',
+    blankSentence: '',
+    options: [
+      {
+        text: 'Memakai topi keledar semasa menunggang basikal adalah sangat penting untuk melindungi kepala.',
+        isCorrect: true,
+      },
+      {
+        text: 'Memakai topi keledar semasa menunggang basikal ialah sangat penting untuk melindungi kepala.',
+        isCorrect: false,
+      },
+    ],
+    explanation: 'Tepat! "sangat penting" ialah Frasa Adjektif, jadi kata pemeri "adalah" mesti digunakan. Ayat pilihan kedua adalah salah kerana menggunakan "ialah".',
+    hint: 'Cari ayat yang menggabungkan kata pemeri yang betul dengan perkataan "sangat penting" (Frasa Adjektif).',
+    position: [9, 1.2, 32],
+  },
+
+  // ZON 4: TAMAN PERMAINAN
+  {
+    id: 'q7',
+    zoneId: 'taman',
+    stationIndex: 1,
+    title: 'Papan Misi Taman 1 (Punca Bahaya)',
+    questionText: 'Pilih kata pemeri yang betul mengenai punca kecederaan di buaian:',
+    blankSentence: 'Punca kebanyakan kemalangan di buaian taman _______ daripada sikap gopoh murid ketika bermain.',
+    options: [
+      { text: 'adalah', isCorrect: true },
+      { text: 'ialah', isCorrect: false },
+    ],
+    explanation: 'Hebat sekali! "daripada sikap gopoh..." ialah Frasa Sendi Nama (bermula dengan kata sendi nama "daripada"). Jadi, "adalah" digunakan.',
+    hint: 'Perkataan "daripada" ialah kata sendi nama. "Adalah" digunakan di hadapan Frasa Sendi Nama.',
+    position: [-27, 1.2, 2],
+  },
+  {
+    id: 'q8',
+    zoneId: 'taman',
+    stationIndex: 2,
+    title: 'Papan Misi Taman 2 (Cabaran Akhir Wira)',
+    questionText: 'Cabaran Wira Akhir! Pilih ayat yang mempunyai tatabahasa kata pemeri yang TEPAT:',
+    blankSentence: '',
+    options: [
+      {
+        text: 'Taman rekreasi ini ialah kawasan riadah yang selamat untuk semua warga penduduk.',
+        isCorrect: true,
+      },
+      {
+        text: 'Taman rekreasi ini adalah kawasan riadah yang selamat untuk semua warga penduduk.',
+        isCorrect: false,
+      },
+    ],
+    explanation: 'Tahniah Wira! "kawasan riadah" ialah Frasa Nama. Ayat pertama adalah betul kerana menggunakan "ialah" di hadapan Frasa Nama!',
+    hint: 'Perhatikan predikat ayat: "kawasan riadah...". Adakah ini Frasa Nama atau Frasa Adjektif? Frasa Nama memerlukan "ialah".',
+    position: [-33, 1.2, 14],
+  },
+];

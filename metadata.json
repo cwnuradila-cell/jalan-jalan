@@ -1,0 +1,6 @@
+{
+  "name": "Dunia Pemeri VR: Bandar Selamat",
+  "description": "Pengembaraan pembelajaran 3D VR bertajuk Dunia Pemeri VR: Pengembaraan Bandar Selamat. Teroka bandar kartun gaya Soft 3D Clay, selesaikan misi kata pemeri 'ialah' dan 'adalah', kumpul lencana dan raih sijil Wira Kata Pemeri.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
